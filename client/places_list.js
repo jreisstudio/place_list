@@ -1,7 +1,8 @@
 Meteor.subscribe('places');
 
 Template.places_list.places = function () {
-  return Places.find({},{sort:{name: -1}});
+  places=Places.find({},{sort:{name: 1}});
+  return places;
 
 }
 
@@ -37,6 +38,17 @@ Template.places_list.events({
 
 Template.maps.rendered = function() {
     renderize_map(Places.find({},{sort:{name: 1}}));
+    Session.set('map', true);
   }
 
+Template.maps.destroyed = function() {
+  Session.set('map', false);
+};
 
+Deps.autorun(function() {
+  var isMap = Session.get('map');
+  if(isMap){
+    renderize_map(Places.find({},{sort:{name: 1}}));
+  }
+
+});

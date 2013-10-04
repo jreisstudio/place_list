@@ -3,22 +3,24 @@
 </head>
 <body>
   <header>
-    <h1>TableList</h1>
+    <h1>Places List...</h1>
     {{> places_list}}
-    {{> maps}}
+    <center>
+      {{> maps}}
+    </center>
   </header>
 </body>
 
 <template name="places_list">
-  <div class"place-list-form">
-    <input type="text" placeholder="Insert a place here" value="{{name}}" id="name"/><br>
-    <input type="text" placeholder="Insert a Latitude here" value="{{latitude}}" id="latitude"/><br>
-    <input type="text" placeholder="Insert a Longitude here " value="{{longitude}}" id="longitude"/><br>
+  <div class="place-list-form">
+    <input type="text" placeholder="Insert a place here" value="{{name}}" id="name"/>
+    <input type="text" placeholder="Insert a Latitude here" value="{{latitude}}" id="latitude"/>
+    <input type="text" placeholder="Insert a Longitude here " value="{{longitude}}" id="longitude"/>
     <input type="text" placeholder="Insert a Color here " value="{{longitude}}" id="color"/>  
     <button id="add">Add point</button>
 
   </div>  
-  <div class"place-list-container">
+  <div class="place-list-container">
     <ul>
       {{#each places}}
       <li> {{ name}} | <a class="plc_remove" data-ref="{{_id}}" href="#">x</a> | </li>
@@ -30,6 +32,6 @@
 </template>
 
 <template name="maps">
-  <div id="map-canvas"></div>
+  <div id="map"></div>
 
 </template>

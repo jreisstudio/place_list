@@ -1,5 +1,28 @@
 /* CSS declarations go here */
-#map-canvas{
-  width:  500px;
-  height: 500px;
+#map{
+  width:  960px;
+  height: 400px;
+  margin-top: 15px;
+
+}
+*{
+  font-size: 100%;
+  font-family: Arial;
+
+}
+.place-list-container{
+  margin-top: 15px;
+  border: 1px solid #CCC;
+  background-color: #FCFCFC;
+  position: absolute;
+  float: left;
+}
+input{
+  width:20%;
+  height: 45px;
+}
+button{
+  background: "#FF4400" 
+  width:20%;
+  height: 45px;
 }
